@@ -2,12 +2,14 @@
 
 require 'rubygems'
 require 'hoe'
+#require 'hoe/gemspec2'
 
 Hoe.add_include_dirs "../../ZenTest/dev/lib"
 Hoe.add_include_dirs "lib"
 
 Hoe.plugin :seattlerb
 Hoe.plugin :isolate
+#Hoe.plugin :gemspec2
 
 Hoe.spec "RubyInline" do
   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'

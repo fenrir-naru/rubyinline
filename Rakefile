@@ -2,14 +2,18 @@
 
 require 'rubygems'
 require 'hoe'
-#require 'hoe/gemspec2'
 
 Hoe.add_include_dirs "../../ZenTest/dev/lib"
 Hoe.add_include_dirs "lib"
 
 Hoe.plugin :seattlerb
 Hoe.plugin :isolate
-#Hoe.plugin :gemspec2
+
+begin
+  require 'hoe/gemspec2'
+  Hoe.plugin :gemspec2
+rescue
+end
 
 Hoe.spec "RubyInline" do
   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
@@ -21,6 +25,7 @@ Hoe.spec "RubyInline" do
   license "MIT"
 
   dependency "ZenTest", "~> 4.3" # for ZenTest mapping
+  dependency "hoe-gemspec2", ">= 1.0", :dev
 end
 
 task :test => :clean

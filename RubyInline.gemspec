@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.metadata = { "homepage_uri" => "http://www.zenspider.com/ZSS/Products/RubyInline/", "source_code_uri" => "https://github.com/seattlerb/rubyinline" } if s.respond_to? :metadata=
   s.require_paths = ["lib".freeze]
   s.authors = ["Ryan Davis".freeze]
-  s.date = "2024-12-22"
+  s.date = "2024-12-24"
   s.description = "Inline allows you to write foreign code within your ruby code. It\nautomatically determines if the code in question has changed and\nbuilds it only when necessary. The extensions are then automatically\nloaded into the class/module that defines it.\n\nYou can even write extra builders that will allow you to write inlined\ncode in any language. Use Inline::C as a template and look at\nModule#inline for the required API.".freeze
   s.email = ["ryand-ruby@zenspider.com".freeze]
   s.extra_rdoc_files = ["History.txt".freeze, "Manifest.txt".freeze, "README.txt".freeze]
@@ -27,10 +27,12 @@ Gem::Specification.new do |s|
 
   if s.respond_to? :add_runtime_dependency then
     s.add_runtime_dependency(%q<ZenTest>.freeze, ["~> 4.3"])
+    s.add_development_dependency(%q<hoe-gemspec2>.freeze, [">= 1.0"])
     s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_development_dependency(%q<hoe>.freeze, ["~> 4.2"])
   else
     s.add_dependency(%q<ZenTest>.freeze, ["~> 4.3"])
+    s.add_dependency(%q<hoe-gemspec2>.freeze, [">= 1.0"])
     s.add_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_dependency(%q<hoe>.freeze, ["~> 4.2"])
   end
